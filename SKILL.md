@@ -25,6 +25,6 @@ description: 使用免费公开来源研究欧洲商品真实到手价；以 Pyt
 - 默认只在 ChatGPT 当前会话使用可用的网页搜索与分析工具回答商品比价，不运行 GitHub Actions。Project 本身不具备直接执行任意 Python/GitHub Actions 的能力。
 - 在准备启动、重新运行、定时运行任何 GitHub Actions 之前，先向用户用中文解释本次 Actions 的作用（代码测试、AEG 实时采集或 NL/DE/BE 采集）、会生成什么报告、潜在 GitHub Actions 分钟/存储费用，并明确问用户是否授权本次运行。没有明确同意，不触发。不可把用户的一次许可视为永久授权。
 - 必须保持 Private 仓库、手动 workflow_dispatch、无 schedule、无付费 API、无代理服务、无自动采购。不得为了节省费用自行把仓库设为 Public。
-- 运行工作流中的 free_quota_confirmed 只在用户确实检查 GitHub Actions 可用免费额度及超额收费保护后才能设为 true；用户没有检查则不得替他确认。工作流中的 timeout-minutes 是运行时长上限，不是费用上限。
+- 运行工作流中的 run_approved 默认 false，仅当用户明确同意一次运行时才能设为 true。用户表示未绑定付款方式，依据 GitHub 官方政策，缺少有效付款方式且免费配额耗尽时使用会被阻止。此付款状态尚未从账户账单中独立核实；若将来绑定付款方式，先核实剩余额度与费用限制。timeout-minutes 是运行时长上限，不是费用上限。
 - 告知用户：GitHub Actions 免费配额与 GitHub 自身账单设置有关；Project 无法在缺少连接权限时自动触发工作流或读取其产物。不得称项目指令中的运行策略已安装到 ChatGPT Project，只能要求用户将说明复制进 Project Instructions。
 - 通过 GitHub Actions 运行成功、程序采集得到候选报价、购物车验证、找到确定最低到手价，是四种不同状态；报告须分别标记。不要将 25 项离线测试通过等同于电商网站实时验证通过。
