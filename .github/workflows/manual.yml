@@ -1,9 +1,9 @@
-name: Manual comparison (quota confirmation required)
+name: Manual comparison (one-time approval)
 on:
   workflow_dispatch:
     inputs:
-      free_quota_confirmed:
-        description: 'I verified Actions included minutes remain and paid overage is disabled'
+      run_approved:
+        description: 'I authorize this one run; it uses GitHub Actions included minutes'
         required: true
         type: boolean
         default: false
@@ -15,7 +15,7 @@ permissions:
   contents: read
 jobs:
   check:
-    if: ${{ inputs.free_quota_confirmed }}
+    if: ${{ inputs.run_approved }}
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
