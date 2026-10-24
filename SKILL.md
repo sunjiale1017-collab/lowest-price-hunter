@@ -28,3 +28,17 @@ description: 使用免费公开来源研究欧洲商品真实到手价；以 Pyt
 - 运行工作流中的 run_approved 默认 false，仅当用户明确同意一次运行时才能设为 true。用户表示未绑定付款方式，依据 GitHub 官方政策，缺少有效付款方式且免费配额耗尽时使用会被阻止。此付款状态尚未从账户账单中独立核实；若将来绑定付款方式，先核实剩余额度与费用限制。timeout-minutes 是运行时长上限，不是费用上限。
 - 告知用户：GitHub Actions 免费配额与 GitHub 自身账单设置有关；Project 无法在缺少连接权限时自动触发工作流或读取其产物。不得称项目指令中的运行策略已安装到 ChatGPT Project，只能要求用户将说明复制进 Project Instructions。
 - 通过 GitHub Actions 运行成功、程序采集得到候选报价、购物车验证、找到确定最低到手价，是四种不同状态；报告须分别标记。不要将 25 项离线测试通过等同于电商网站实时验证通过。
+
+## 按商品型号进行新的 Python 搜索
+
+当用户想查其他商品时，先从公开商品资料确定精确英文数字 SKU/型号（如 `TR738AT2B`）。仅在得到用户同意后，才可以让其通过 GitHub Actions 手动运行；不能将 ChatGPT Project 当作 Python 执行环境。
+
+执行示例：
+
+```bash
+python -m hunter.cli --config config/europe.json --model TR738AT2B --out reports/custom
+```
+
+这只会查询配置好的 NL/DE/BE 三个搜索入口，尚无全欧动态商品发现器，也没有自动购物车优惠验证。若只有品牌或模糊描述，先在聊天中搜索并确认型号，不要将自然语言直接作为 `--model`。结果为 0 或费用未核实时应说明是覆盖不足，不能说明欧洲无货。
+
+Actions 工作流手动输入：`run_approved` = 本次明确授权；`live` = 允许尝试公开商品网页；`product_model` = 目标精确型号。每次运行都要单独授权；不能将一次授权复用，也不得开启自动计费服务。
