@@ -46,13 +46,13 @@ Windows 可把 `python` 换为 `py -3`。无需 pip 安装。查看 `reports/liv
 - 尚无小红书/YouTube/TikTok 平台专用适配器；本次公开搜索未取得可核实优惠内容。Reddit 仅为讨论线索，不证明价格/库存。
 - 没有接通搜索引擎 API 或付费历史服务；历史从自己的实际观测开始，不伪造既往最低价。
 
-## GitHub 与费用
+## GitHub 已部署与费用保护
 
-连接器已识别 GitHub 账号，但当前连接器无创建仓库操作，环境无 gh，未取得可用于创建私人仓库的授权接口，因此交付 ZIP。未创建远程仓库、未上传、未启用 Actions。
+源代码已上传至私人仓库 [sunjiale1017-collab/lowest-price-hunter](https://github.com/sunjiale1017-collab/lowest-price-hunter)，包含手动触发的 GitHub Actions `.github/workflows/manual.yml`。**代码上传成功不等于云端运行通过**；截至本次文档修订，尚无 GitHub Actions 成功运行的证据。
 
-可以自行在 GitHub 创建 **private** 仓库 `lowest-price-hunter` 并上传代码。不要提交 reports/live、reports/europe、SQLite、Cookies、密码、个人信息或 private 配置。`.gitignore` 已排除这些内容。审计记录是公开上游源文件，不是用户购物数据。
+运行工作流在 GitHub 仓库的 **Actions → Manual comparison → Run workflow**。开关 `free_quota_confirmed` 默认 false，未核实账户中剩余免费分钟数、是否存在付费支付方式及超额保护时不要设为 true。若将其设为 false，则 check job 不会执行。开启 `live` 表示允许尝试公开商家网页，不下单；默认 false 只运行 25 项离线测试。工作流最长 8 分钟；这是超时上限，**不是金钱费用上限**。
 
-工作流仅 `workflow_dispatch`。`free_quota_confirmed` 默认为 false，此时 job 不会运行。只有你检查账号剩余包含分钟数并禁用付费超额后才能设 true；我们未检查账单，不能承诺当前账户免费。定时未配置。若要求绝对不触发 GitHub 计算费用，先只在自己的电脑运行。
+GitHub Actions 私人仓库使用账户免费额度，超过配额可能收费；请先在账户 Billing → Budgets and alerts 中启用费用硬性停止（如可用）并核实配额。仓库保持 Private，无自动 schedule、无付费 API、无登录 Cookie。项目不会自动弹出 GitHub Actions 授权；ChatGPT Project 的询问规则需要在其 Project Instructions 中另行配置，见 [docs/PROJECT_USAGE.md](docs/PROJECT_USAGE.md)。
 
 ## 测试证据
 
