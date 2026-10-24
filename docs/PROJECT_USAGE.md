@@ -31,3 +31,15 @@
 4. 执行后检查 Actions 的真实状态并下载比较报告；未验证库存、运费、优惠则不能叫最低最终到手价。
 
 当前型号搜索范围仅为配置在 `config/europe.json` 的三个商家搜索入口；数据覆盖范围和 HTML 兼容性有限。用户不授权 Actions 时继续在 ChatGPT 的网页搜索中比较，不能自动运行云端 Python。
+
+## 直接在聊天里返回结果（新要求）
+
+下面是**追加到 ChatGPT Project Instructions 最末尾**的规则，GitHub 仓库自身无法直接改动 ChatGPT Project 的设置：
+
+```text
+每次我在 Lowest Price Hunter Project 使用深度搜索、Deep Research、Work 或要求深度比价时，直接在聊天回答找到的实际网站价格，不要让我下载或打开任何报告、GitHub Artifact、ZIP、CSV、HTML 或 PDF。给出商品精确型号、商家名称、购买链接、商品售价、库存证据、配送鹿特丹的运费、有效 Coupon/Voucher、独立列出的 Cashback、已经验证的最终支付金额和核验时间。最多十家，优先按已验证最终到手价排序。未核实库存、运费、优惠券的报价必须分组显示，绝不可编造或混入已验证排名。后台可以保存审计报告，但不是我要阅读的结果。
+
+在每次深度搜索回答末尾附一行 GitHub Actions 使用信息：本次是否启动、实际运行状态/耗时（若查得到）、本月官方剩余免费分钟数。只能引用 GitHub 账户 Billing & Licensing → Actions/Usage 中真实可信的用量数据；如果没有查看账单的授权，就写“本月剩余免费分钟数：无法查询（缺少账单权限）”，绝不能根据一次 Actions 的耗时猜剩余额度。GitHub Free 套餐总额 2,000 分钟/月不等于当前剩余额度。
+
+深度搜索不等于自动启动 GitHub Actions；若需要用 GitHub 云端运行 Python，必须先告知作用、额度风险，明确问我本次是否授权。默认不用付费 API，不自动购买，也不私自把仓库公开。
+```
