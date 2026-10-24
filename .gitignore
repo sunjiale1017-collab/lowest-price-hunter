@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+.env*
+*cookie*
+*credential*
+*storage_state*
+reports/live/
+reports/europe/
+*.sqlite
+config/private*.json

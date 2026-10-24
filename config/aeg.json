@@ -1,0 +1,56 @@
+{
+  "model": "TR738AT2B",
+  "destination_country": "NL",
+  "sources": [
+    {
+      "merchant": "AEG NL",
+      "country": "NL",
+      "url": "https://www.aeg.nl/laundry/laundry/dryers/heat-pump-dryer/tr738at2b/"
+    },
+    {
+      "merchant": "Bemmel en Kroon",
+      "country": "NL",
+      "url": "https://www.bemmelenkroon.nl/merken/aeg/tr738at2b-aego/"
+    },
+    {
+      "merchant": "Keukenloods",
+      "country": "NL",
+      "url": "https://www.keukenloods.nl/product/aeg-tr738at2b-wasdroger-aego/"
+    },
+    {
+      "merchant": "EP",
+      "country": "NL",
+      "url": "https://www.ep.nl/product/aeg-tr738at2b-1429265"
+    }
+  ],
+  "research_sources": [
+    {
+      "kind": "official",
+      "url": "https://www.aeg.nl/local/promotions/laundry-cashback/"
+    },
+    {
+      "kind": "cashback",
+      "url": "https://www.cashbackxl.nl/webshops/aeg"
+    },
+    {
+      "kind": "cashback",
+      "url": "https://www.shopbuddies.nl/"
+    },
+    {
+      "kind": "coupon",
+      "url": "https://nl.pepper.com/groep/aeg"
+    },
+    {
+      "kind": "coupon",
+      "url": "https://www.mydealz.de/gruppe/aeg"
+    },
+    {
+      "kind": "coupon",
+      "url": "https://www.vouchercodes.nl/aeg.nl"
+    },
+    {
+      "kind": "social",
+      "url": "https://www.reddit.com/r/BIFLNL/comments/1r7x2fr/wasdroger_gezocht/"
+    }
+  ]
+}

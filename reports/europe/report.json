@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-10-24T21:05:09.790248+00:00",
+  "verified_ranking": [],
+  "unverified_offers": [],
+  "failures": [
+    {
+      "url": "https://www.coolblue.nl/zoeken?query=TR738AT2B",
+      "reason": "robots disallow",
+      "checked_at": "2026-10-24T21:04:24.168382+00:00"
+    },
+    {
+      "url": "https://www.mediamarkt.de/de/search.html?query=TR738AT2B",
+      "reason": "No matching nonaggregate JSON-LD offer",
+      "checked_at": "2026-10-24T21:04:44.168832+00:00"
+    },
+    {
+      "url": "https://www.coolblue.be/nl/zoeken?query=TR738AT2B",
+      "reason": "No matching nonaggregate JSON-LD offer",
+      "checked_at": "2026-10-24T21:05:09.790048+00:00"
+    }
+  ],
+  "leads": [],
+  "monitoring_deployed": false
+}

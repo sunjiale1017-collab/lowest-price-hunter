@@ -1,0 +1,251 @@
+{
+  "generated_at": "2026-10-24T21:08:31.099599+00:00",
+  "verified_ranking": [],
+  "unverified_offers": [
+    {
+      "url": "https://www.bemmelenkroon.nl/merken/aeg/tr738at2b-aego/",
+      "merchant": "Bemmel en Kroon",
+      "country": "NL",
+      "name": "AEG TR738AT2B wasdroger",
+      "model": "TR738AT2B",
+      "ean": "7333394036762",
+      "sku": "TR738AT2B",
+      "price": "645",
+      "currency": "EUR",
+      "stock": "store_only",
+      "condition": "Showroom",
+      "shipping": null,
+      "fees": null,
+      "vat_included": null,
+      "delivery_nl": null,
+      "warranty": "unknown",
+      "returns": "unknown",
+      "installation": "unknown",
+      "old_appliance": "unknown",
+      "checked_at": "2026-10-24T21:06:51.141404+00:00",
+      "evidence": {
+        "product": {
+          "url": "https://www.bemmelenkroon.nl/merken/aeg/tr738at2b-aego/",
+          "checked_at": "2026-10-24T21:06:51.141404+00:00",
+          "method": "JSON-LD Product/Offer",
+          "availability": "InStoreOnly"
+        },
+        "identity": {
+          "name": "AEG TR738AT2B wasdroger",
+          "model": "TR738AT2B",
+          "ean": "7333394036762",
+          "sku": "TR738AT2B"
+        },
+        "condition_override": "Showroommodel in main product section"
+      },
+      "coupons": [],
+      "cashback": [],
+      "total": null,
+      "exclusions": [
+        "Stock not confirmed in stock",
+        "NL delivery unverified",
+        "Shipping unknown",
+        "Mandatory fees unknown",
+        "Destination VAT unverified"
+      ],
+      "potential_net_if_cashback_approved": null
+    },
+    {
+      "url": "https://www.ep.nl/product/aeg-tr738at2b-1429265",
+      "merchant": "EP",
+      "country": "NL",
+      "name": "AEG TR738AT2B 7000 Serie Warmtepompdroger",
+      "model": "TR738AT2B",
+      "ean": "7333394036762",
+      "sku": "1429265",
+      "price": "849.00",
+      "currency": "EUR",
+      "stock": "in_stock",
+      "condition": "NewCondition",
+      "shipping": null,
+      "fees": null,
+      "vat_included": null,
+      "delivery_nl": null,
+      "warranty": "unknown",
+      "returns": "unknown",
+      "installation": "unknown",
+      "old_appliance": "unknown",
+      "checked_at": "2026-10-24T21:07:10.872792+00:00",
+      "evidence": {
+        "product": {
+          "url": "https://www.ep.nl/product/aeg-tr738at2b-1429265",
+          "checked_at": "2026-10-24T21:07:10.872792+00:00",
+          "method": "JSON-LD Product/Offer",
+          "availability": "InStock"
+        },
+        "identity": {
+          "name": "AEG TR738AT2B 7000 Serie Warmtepompdroger",
+          "model": "",
+          "ean": "7333394036762",
+          "sku": "1429265"
+        }
+      },
+      "coupons": [],
+      "cashback": [],
+      "total": null,
+      "exclusions": [
+        "NL delivery unverified",
+        "Shipping unknown",
+        "Mandatory fees unknown",
+        "Destination VAT unverified"
+      ],
+      "potential_net_if_cashback_approved": null
+    },
+    {
+      "url": "https://www.keukenloods.nl/product/aeg-tr738at2b-wasdroger-aego/",
+      "merchant": "Keukenloods",
+      "country": "NL",
+      "name": "AEG TR738AT2B wasdroger",
+      "model": "TR738AT2B",
+      "ean": "7333394036762",
+      "sku": "TR738AT2B",
+      "price": "645",
+      "currency": "EUR",
+      "stock": "out_of_stock",
+      "condition": "NewCondition",
+      "shipping": null,
+      "fees": null,
+      "vat_included": null,
+      "delivery_nl": null,
+      "warranty": "unknown",
+      "returns": "unknown",
+      "installation": "unknown",
+      "old_appliance": "unknown",
+      "checked_at": "2026-10-24T21:07:00.964611+00:00",
+      "evidence": {
+        "product": {
+          "url": "https://www.keukenloods.nl/product/aeg-tr738at2b-wasdroger-aego/",
+          "checked_at": "2026-10-24T21:07:00.964611+00:00",
+          "method": "JSON-LD Product/Offer",
+          "availability": "Discontinued"
+        },
+        "identity": {
+          "name": "AEG TR738AT2B wasdroger",
+          "model": "TR738AT2B",
+          "ean": "7333394036762",
+          "sku": "TR738AT2B"
+        },
+        "stock_override": "Nooit meer leverbaar in main product section"
+      },
+      "coupons": [],
+      "cashback": [],
+      "total": null,
+      "exclusions": [
+        "Stock not confirmed in stock",
+        "NL delivery unverified",
+        "Shipping unknown",
+        "Mandatory fees unknown",
+        "Destination VAT unverified"
+      ],
+      "potential_net_if_cashback_approved": null
+    }
+  ],
+  "failures": [
+    {
+      "url": "https://www.aeg.nl/laundry/laundry/dryers/heat-pump-dryer/tr738at2b/",
+      "reason": "HTTP 301",
+      "checked_at": "2026-10-24T21:06:41.151952+00:00"
+    },
+    {
+      "kind": "cashback",
+      "url": "https://www.shopbuddies.nl/",
+      "reason": "robots disallow",
+      "checked_at": "2026-10-24T21:07:31.375891+00:00"
+    },
+    {
+      "kind": "coupon",
+      "url": "https://nl.pepper.com/groep/aeg",
+      "reason": "HTTP 410",
+      "checked_at": "2026-10-24T21:07:41.498629+00:00"
+    },
+    {
+      "kind": "coupon",
+      "url": "https://www.mydealz.de/gruppe/aeg",
+      "reason": "HTTP 410",
+      "checked_at": "2026-10-24T21:07:51.366694+00:00"
+    },
+    {
+      "kind": "social",
+      "url": "https://www.reddit.com/r/BIFLNL/comments/1r7x2fr/wasdroger_gezocht/",
+      "reason": "robots disallow",
+      "checked_at": "2026-10-24T21:08:05.563279+00:00"
+    }
+  ],
+  "leads": [
+    {
+      "kind": "official",
+      "url": "https://www.aeg.nl/local/promotions/laundry-cashback/",
+      "checked_at": "2026-10-24T21:07:16.014228+00:00",
+      "status": "public lead only; eligibility/expiry/stack/cart unverified",
+      "grade": "B",
+      "code_candidates": [],
+      "matching_lines": [
+        "drogers en was-droogcombinaties | AEG   Ga naar hoofdinhoud Installatieservices Gratis levering vanaf 50 euro 14 dagen zorgeloos retourneren Koop rechtstreeks bij AEG Bel ons Verkoopadres zoeken Huishoudelijke apparaten  Onderdelen & accessoires Promoties    Ontdek  AEG Support Menu Onderdelen & accessoir",
+        "essoires kleinhuishoudelijke apparaten Profiteer van al onze exclusieve acties, gratis geschenken en extra garanties. Lees meer Alle acties en promoties Profiteer van al onze exclusieve acties, gratis geschenken en extra garanties. Promotie op wasmachines en drogers Ontvang tot €125 cashback bij aankoop v",
+        "es. Lees meer Alle acties en promoties Profiteer van al onze exclusieve acties, gratis geschenken en extra garanties. Promotie op wasmachines en drogers Ontvang tot €125 cashback bij aankoop van een deelnemend apparaat. Actie geldig van 01/10 t/m 31/12/2026 Promotie op vaatwassers Ontvang tot €150 cashbac",
+        "chenken en extra garanties. Promotie op wasmachines en drogers Ontvang tot €125 cashback bij aankoop van een deelnemend apparaat. Actie geldig van 01/10 t/m 31/12/2026 Promotie op vaatwassers Ontvang tot €150 cashback bij aankoop van een deelnemend apparaat. Actie geldig van 01/10 t/m 31/12/2026 Stofzuigers",
+        " Actie geldig van 01/10 t/m 31/12/2026 Promotie op vaatwassers Ontvang tot €150 cashback bij aankoop van een deelnemend apparaat. Actie geldig van 01/10 t/m 31/12/2026 Stofzuigers actie Ontvang tot €50,- cashback bij geselecteerde stofzuigers. Actie geldig van 01/10/2026 t/m 31/12/2026. Exclusieve AEG onlin",
+        "raat. Actie geldig van 01/10 t/m 31/12/2026 Stofzuigers actie Ontvang tot €50,- cashback bij geselecteerde stofzuigers. Actie geldig van 01/10/2026 t/m 31/12/2026. Exclusieve AEG online aanbiedingen Uitzonderlijke kortingen op een selectie van huishoudapparaten. Actie geldig 01/10/2026 t/m 08/10/2026. Promo",
+        "an 01/10/2026 t/m 31/12/2026. Exclusieve AEG online aanbiedingen Uitzonderlijke kortingen op een selectie van huishoudapparaten. Actie geldig 01/10/2026 t/m 08/10/2026. Promotie op wasmachines en drogers Promotie op vaatwassers Stofzuigers actie Exclusieve AEG online aanbiedingen Bezoek onze showroom Hulp ",
+        "ieuws van AEG Leave a Review Registreer je producten Over AEG AEG Local Laundry cashback Cashback op wassen en drogen Krijg tot € 125 cashback bij deelnemende AEG wasmachines, drogers of was-droogcombinaties  Actie geldig van 01/10/2026 t/m 31/12/2026 Ga direct naar Info & actievoorwaarden Deelname & regist",
+        " AEG Leave a Review Registreer je producten Over AEG AEG Local Laundry cashback Cashback op wassen en drogen Krijg tot € 125 cashback bij deelnemende AEG wasmachines, drogers of was-droogcombinaties  Actie geldig van 01/10/2026 t/m 31/12/2026 Ga direct naar Info & actievoorwaarden Deelname & registratie Con",
+        "ver AEG AEG Local Laundry cashback Cashback op wassen en drogen Krijg tot € 125 cashback bij deelnemende AEG wasmachines, drogers of was-droogcombinaties  Actie geldig van 01/10/2026 t/m 31/12/2026 Ga direct naar Info & actievoorwaarden Deelname & registratie Contacteer ons Info & actievoorwaarden Deelname ",
+        "eer ons Info & actievoorwaarden Deelname & registratie Contacteer ons Tot € 125 cashback op deelnemende modellen Krijg tot € 125 cashback bij aankoop van een AEG wasmachine, een droger of een was-droogcombinatie. Cashback € 125 9000X drogers Cashback € 100 9000 wasmachines/drogers/was-droogcombinaties Cashb",
+        "ratie Contacteer ons Tot € 125 cashback op deelnemende modellen Krijg tot € 125 cashback bij aankoop van een AEG wasmachine, een droger of een was-droogcombinatie. Cashback € 125 9000X drogers Cashback € 100 9000 wasmachines/drogers/was-droogcombinaties Cashback € 75 8000 wasmachines/drogers/was-droogcombin"
+      ],
+      "cart_tested": false
+    },
+    {
+      "kind": "cashback",
+      "url": "https://www.cashbackxl.nl/webshops/aeg",
+      "checked_at": "2026-10-24T21:07:26.507126+00:00",
+      "status": "public lead only; eligibility/expiry/stack/cart unverified",
+      "grade": "C",
+      "code_candidates": [],
+      "matching_lines": [
+        "      7% cashback bij AEG | Altijd de hoogste cashback                                       menu            Zoek      AliExpress  6,50%    Thuisbezorgd.nl  4,00%    Bol Cadeaukaart  2,00%    Amazon  15,00%    Coolblue  2,25%     Bekijk ",
+        "      7% cashback bij AEG | Altijd de hoogste cashback                                       menu            Zoek      AliExpress  6,50%    Thuisbezorgd.nl  4,00%    Bol Cadeaukaart  2,00%    Amazon  15,00%    Coolblue  2,25%     Bekijk alle resultaten  Geen resultaten gevo",
+        "  Max 15%    Overig  325    Max €75,-          Alle webshops     Aanbiedingen & kortingscodes    compare_arrows  Vergelijker    Exclusieve deals    Hoe werkt het?    Goed om te weten   Acer| Tot 5% cashback      Home   Webshops & merken       Cadeaukaarten  Telecom  Energie  Financieel  Fashion  Hotels & V",
+        "lijker    Exclusieve deals    Hoe werkt het?    Goed om te weten   Acer| Tot 5% cashback      Home   Webshops & merken       Cadeaukaarten  Telecom  Energie  Financieel  Fashion  Hotels & Vakantie  Electronica  Huis & Tuin  Sport & Outdoor  Gezondheid & Beauty  Eten & Drinken  Baby, kids & speelgoed  Zakeli",
+        "en  Baby, kids & speelgoed  Zakelijk  Dagaanbiedingen  Overig    Aanbiedingen & kortingscodes    Vergelijker    Exclusieve deals    Hoe werkt het?    Goed om te weten            AliExpress  6,50%    Thuisbezorgd.nl  4,00%    Bol Cadeaukaart  2,00%    Amazon  15,00%    Coolblue  2,25%     Geen resultaten ge",
+        "          \r\n                                                                    Cashback  op aeg.nl   Shop & ontvang cashback   AEG ontwikkelt al meer dan 125 jaar huishoudelijke apparatuur en blijft inspireren met producten van de toekomst.    Terug            Tot  7%   Cashback  op aeg.nl   Shop & ontvang",
+        "                                           Cashback  op aeg.nl   Shop & ontvang cashback   AEG ontwikkelt al meer dan 125 jaar huishoudelijke apparatuur en blijft inspireren met producten van de toekomst.    Terug            Tot  7%   Cashback  op aeg.nl   Shop & ontvang cashback   AEG ontwikkelt al meer da",
+        " blijft inspireren met producten van de toekomst.    Terug            Tot  7%   Cashback  op aeg.nl   Shop & ontvang cashback   AEG ontwikkelt al meer dan 125 jaar huishoudelijke apparatuur en blijft inspireren met producten van de toekomst.    Totaal uitgekeerd  €55.118     Voorwaarden & meer info         ",
+        "de toekomst.    Terug            Tot  7%   Cashback  op aeg.nl   Shop & ontvang cashback   AEG ontwikkelt al meer dan 125 jaar huishoudelijke apparatuur en blijft inspireren met producten van de toekomst.    Totaal uitgekeerd  €55.118     Voorwaarden & meer info                       Bevestiging   10 minute",
+        "ng  De grafiek toont percentages van goedgekeurde (groen) en bevestigde (blauw) cashbacks per maand, met data van de afgelopen 12 maanden.        okt       nov       dec       jan       feb       mrt       apr       mei       jun       jul       aug       sep         Geregistreerd   84%       Totale klant b",
+        "views                 Recente transacties  Meer info        Datum  Orderwaarde  Cashback       24-10-2026    € 800,58    € 56,04      23-10-2026    € 780,98    € 54,67      22-10-2026    € 775,58    € 54,29                 Claims  Meer info         Claims   16%        Claims Toegewezen   84%       Claim typ",
+        "o         Claims   16%        Claims Toegewezen   84%       Claim types    Geen cashback  Onterecht afgekeurd  Verkeerd cashbackbedrag                 Oude aanbiedingen       max.\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t7% cashback  Cashback op AEG wasmachines en drogers  Verlopen    max.  7%  cashback    Cashback op AEG wasmachin"
+      ],
+      "cart_tested": false
+    },
+    {
+      "kind": "coupon",
+      "url": "https://www.vouchercodes.nl/aeg.nl",
+      "checked_at": "2026-10-24T21:08:00.657894+00:00",
+      "status": "public lead only; eligibility/expiry/stack/cart unverified",
+      "grade": "C",
+      "code_candidates": [],
+      "matching_lines": [
+        "             AEG kortingscode: 15% korting in oktober 2026                                    Vouchercodes.nl               Winkels       Albelli  Albert Heijn  Amazon  bol.com  Foodello  Grover  Jeans Centre    JUMBO  Kleertjes.com  Malelions ",
+        "             AEG kortingscode: 15% korting in oktober 2026                                    Vouchercodes.nl               Winkels       Albelli  Albert Heijn  Amazon  bol.com  Foodello  Grover  Jeans Centre    JUMBO  Kleertjes.com  Malelions  MyProtein  Nike  ",
+        "EG kortingscode: 15% korting in oktober 2026                                    Vouchercodes.nl               Winkels       Albelli  Albert Heijn  Amazon  bol.com  Foodello  Grover  Jeans Centre    JUMBO  Kleertjes.com  Malelions  MyProtein  Nike  Schuurman Schoenen  Wehkamp   Alle winkels     Categorieën ",
+        "en  Sport & Outdoor  Vakantie & Reizen  Warenhuizen & Supermarkten              Vouchercodes.nl                    Winkels         Albelli  Albert Heijn  Amazon  bol.com    Foodello  Grover  Jeans Centre  JUMBO    Kleertjes.com  Malelions  MyProtein    Nike  Schuurman Schoenen  Wehkamp    Alle winkels     ",
+        " wij daar een kleine commissie voor krijgen. Dat beïnvloedt niet welke deals of kortingen we delen.                         Winkels        Albelli  albelli.nl       Albert Heijn  ah.nl       Amazon  amazon.nl       America Today  america-today.com      Alle winkels                         Home            K",
+        "ay  america-today.com      Alle winkels                         Home            Kortingscodes            AEG       AEG kortingscode  Tot 15% korting bij AEG met deze kortingscodes  https://www.aeg.nl/              15% Korting: Ontvang 15% korting als je member wordt bij AEG Via MyAEG        92 keer gebruik",
+        "                         Home            Kortingscodes            AEG       AEG kortingscode  Tot 15% korting bij AEG met deze kortingscodes  https://www.aeg.nl/              15% Korting: Ontvang 15% korting als je member wordt bij AEG Via MyAEG        92 keer gebruikt      Toon activiteit  Verberg activit",
+        "   Home            Kortingscodes            AEG       AEG kortingscode  Tot 15% korting bij AEG met deze kortingscodes  https://www.aeg.nl/              15% Korting: Ontvang 15% korting als je member wordt bij AEG Via MyAEG        92 keer gebruikt      Toon activiteit  Verberg activiteit             Verloo",
+        "gscodes            AEG       AEG kortingscode  Tot 15% korting bij AEG met deze kortingscodes  https://www.aeg.nl/              15% Korting: Ontvang 15% korting als je member wordt bij AEG Via MyAEG        92 keer gebruikt      Toon activiteit  Verberg activiteit             Verloopt over 2 maanden     Laa",
+        "5% korting bij AEG met deze kortingscodes  https://www.aeg.nl/              15% Korting: Ontvang 15% korting als je member wordt bij AEG Via MyAEG        92 keer gebruikt      Toon activiteit  Verberg activiteit             Verloopt over 2 maanden     Laatst gebruikt 1 dag geleden (92 keer in totaal)     T",
+        "t deze kortingscodes  https://www.aeg.nl/              15% Korting: Ontvang 15% korting als je member wordt bij AEG Via MyAEG        92 keer gebruikt      Toon activiteit  Verberg activiteit             Verloopt over 2 maanden     Laatst gebruikt 1 dag geleden (92 keer in totaal)     Toegevoegd 6 maanden g",
+        "codes  https://www.aeg.nl/              15% Korting: Ontvang 15% korting als je member wordt bij AEG Via MyAEG        92 keer gebruikt      Toon activiteit  Verberg activiteit             Verloopt over 2 maanden     Laatst gebruikt 1 dag geleden (92 keer in totaal)     Toegevoegd 6 maanden geleden        "
+      ],
+      "cart_tested": false
+    }
+  ],
+  "monitoring_deployed": false
+}

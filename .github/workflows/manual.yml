@@ -1,0 +1,33 @@
+name: Manual comparison (quota confirmation required)
+on:
+  workflow_dispatch:
+    inputs:
+      free_quota_confirmed:
+        description: 'I verified Actions included minutes remain and paid overage is disabled'
+        required: true
+        type: boolean
+        default: false
+      live:
+        description: 'Also attempt public merchant pages (no purchases)'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  check:
+    if: ${{ inputs.free_quota_confirmed }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -v
+      - if: ${{ inputs.live }}
+        run: python -m hunter.cli --out reports/live
+      - uses: actions/upload-artifact@v4
+        with:
+          name: comparison-reports
+          path: reports/
+          retention-days: 1

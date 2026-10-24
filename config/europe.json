@@ -1,0 +1,9 @@
+{
+ "model":"TR738AT2B",
+ "sources":[
+ {"merchant":"Coolblue NL","country":"NL","url":"https://www.coolblue.nl/zoeken?query=TR738AT2B","search_url":"https://www.coolblue.nl/zoeken?query={query}"},
+ {"merchant":"MediaMarkt DE","country":"DE","url":"https://www.mediamarkt.de/de/search.html?query=TR738AT2B","search_url":"https://www.mediamarkt.de/de/search.html?query={query}"},
+ {"merchant":"Coolblue BE","country":"BE","url":"https://www.coolblue.be/nl/zoeken?query=TR738AT2B","search_url":"https://www.coolblue.be/nl/zoeken?query={query}"}
+ ],
+ "research_sources":[]
+}

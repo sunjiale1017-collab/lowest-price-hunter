@@ -1,0 +1,30 @@
+test_aggregate_rejected (test_system.Tests.test_aggregate_rejected) ... ok
+test_bad_coupon_amount_rejected (test_system.Tests.test_bad_coupon_amount_rejected) ... ok
+test_cashback_requires_compatibility (test_system.Tests.test_cashback_requires_compatibility) ... ok
+test_cashback_separate (test_system.Tests.test_cashback_separate) ... ok
+test_challenge_stops (test_system.Tests.test_challenge_stops) ... ok
+test_coupon_cart_required (test_system.Tests.test_coupon_cart_required) ... ok
+test_coupon_unverified_not_deducted (test_system.Tests.test_coupon_unverified_not_deducted) ... ok
+test_coupon_wrong_cart_base_rejected (test_system.Tests.test_coupon_wrong_cart_base_rejected) ... ok
+test_crossborder_not_assumed (test_system.Tests.test_crossborder_not_assumed) ... ok
+test_dedup (test_system.Tests.test_dedup) ... ok
+test_evidence_applies (test_system.Tests.test_evidence_applies) ... ok
+test_feed (test_system.Tests.test_feed) ... ok
+test_html_stock_scope (test_system.Tests.test_html_stock_scope) ... ok
+test_old_coupon_rejected (test_system.Tests.test_old_coupon_rejected) ... ok
+test_price_locales (test_system.Tests.test_price_locales) ... ok
+test_private_url_rejected (test_system.Tests.test_private_url_rejected) ... ok
+test_product_identity (test_system.Tests.test_product_identity) ... ok
+test_rank_by_final_not_sticker (test_system.Tests.test_rank_by_final_not_sticker) ... ok
+test_reports_and_history (test_system.Tests.test_reports_and_history) ... ok
+test_robots_denied (test_system.Tests.test_robots_denied) ... ok
+test_showroom (test_system.Tests.test_showroom) ... ok
+test_stale_evidence (test_system.Tests.test_stale_evidence) ... ok
+test_stock_excluded (test_system.Tests.test_stock_excluded) ... ok
+test_unknown_cost_excluded (test_system.Tests.test_unknown_cost_excluded) ... ok
+test_variant_rejected (test_system.Tests.test_variant_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.007s
+
+OK
