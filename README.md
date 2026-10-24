@@ -50,9 +50,9 @@ Windows 可把 `python` 换为 `py -3`。无需 pip 安装。查看 `reports/liv
 
 源代码已上传至私人仓库 [sunjiale1017-collab/lowest-price-hunter](https://github.com/sunjiale1017-collab/lowest-price-hunter)，包含手动触发的 GitHub Actions `.github/workflows/manual.yml`。**代码上传成功不等于云端运行通过**；截至本次文档修订，尚无 GitHub Actions 成功运行的证据。
 
-运行工作流在 GitHub 仓库的 **Actions → Manual comparison → Run workflow**。开关 `free_quota_confirmed` 默认 false，未核实账户中剩余免费分钟数、是否存在付费支付方式及超额保护时不要设为 true。若将其设为 false，则 check job 不会执行。开启 `live` 表示允许尝试公开商家网页，不下单；默认 false 只运行 25 项离线测试。工作流最长 8 分钟；这是超时上限，**不是金钱费用上限**。
+运行工作流在 GitHub 仓库的 **Actions → Manual comparison → Run workflow**。开关 `run_approved` 默认 false，只有用户明确同意本次运行才设为 true；若为 false，check job 不会执行。用户表示账户未绑定有效付款方式，GitHub 官方文档说明免费额度用完后会阻止继续使用；如以后添加付款方式，必须重新核实账单和超额费用限制。开启 `live` 表示允许尝试公开商家网页，不下单；默认 false 只运行 25 项离线测试。工作流最长 8 分钟；这是超时上限，**不是金钱费用上限**。
 
-GitHub Actions 私人仓库使用账户免费额度，超过配额可能收费；请先在账户 Billing → Budgets and alerts 中启用费用硬性停止（如可用）并核实配额。仓库保持 Private，无自动 schedule、无付费 API、无登录 Cookie。项目不会自动弹出 GitHub Actions 授权；ChatGPT Project 的询问规则需要在其 Project Instructions 中另行配置，见 [docs/PROJECT_USAGE.md](docs/PROJECT_USAGE.md)。
+GitHub Actions 私人仓库消耗免费额度；如账户有有效付款方式，超过配额可能收费。请勿将用户口头提供的付款信息状态当成已独立验证的账户配置；有付款方式时应在 Billing 设置费用限制。仓库保持 Private，无自动 schedule、无付费 API、无登录 Cookie。项目不会自动弹出 GitHub Actions 授权；ChatGPT Project 的询问规则需要在其 Project Instructions 中另行配置，见 [docs/PROJECT_USAGE.md](docs/PROJECT_USAGE.md)。
 
 ## 测试证据
 
