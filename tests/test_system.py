@@ -4,6 +4,7 @@ from unittest.mock import patch
 from decimal import Decimal
 from hunter.models import Offer,money,now
 from hunter.http import Client,Blocked
+from hunter.search_input import with_model
 from hunter.evidence import apply
 from scrapers import parse
 from scrapers.html_adapter import parse as htmlparse
@@ -18,6 +19,19 @@ def page(**kw):
 def ready():
     return Offer(**S,name='TEST123',model='TEST123',price='600',currency='EUR',stock='in_stock',condition='NewCondition',shipping='20',fees='0',vat_included=True,delivery_nl=True)
 class Tests(unittest.TestCase):
+    def test_model_override(self):
+        original={'model':'OLD','sources':[{'url':'https://example.com/search?q=OLD','search_url':'https://example.com/search?q={query}','merchant':'M'}],'research_sources':[{'kind':'coupon','url':'https://example.com/old'}]}
+        result=with_model(original,'AEG-123_2')
+        self.assertEqual(result['model'],'AEG-123_2')
+        self.assertEqual(result['sources'][0]['url'],'https://example.com/search?q=AEG-123_2')
+        self.assertEqual(result['research_sources'],[])
+        self.assertEqual(original['model'],'OLD')
+    def test_model_override_rejects_fixed_urls(self):
+        with self.assertRaises(ValueError):with_model({'sources':[{'url':'https://example.com/old'}]},'TEST12')
+    def test_model_override_rejects_invalid(self):
+        cfg={'sources':[{'search_url':'https://example.com?q={query}'}]}
+        for model in ('A','ab;curl','../secret','中文型号','ab cd','a'*61):
+            with self.assertRaises(ValueError):with_model(cfg,model)
     def test_price_locales(self):
         self.assertEqual(money('1.234,56'),'1234.56');self.assertEqual(money('1234.56'),'1234.56');self.assertIsNone(money('NaN'));self.assertIsNone(money('-2'))
     def test_product_identity(self):
@@ -48,7 +62,7 @@ class Tests(unittest.TestCase):
         o=ready();o.shipping=None;self.assertEqual(apply([o],[{'source_url':S['url'],'offer_url':o.url,'model':o.model,'quote':'Shipping 20 EUR to NL','checked_at':now(),'destination_country':'NL','facts':{'shipping':'20'}}]),[]);self.assertEqual(o.shipping,'20')
     def test_reports_and_history(self):
         with tempfile.TemporaryDirectory() as d:
-            data=write(rank([ready()]),[],[],d);self.assertEqual(len(data['verified_ranking']),1)
+            data=write(rank([ready()]),[],[],d,requested_model='TEST123');self.assertEqual(len(data['verified_ranking']),1);self.assertEqual(data['requested_model'],'TEST123')
             for f in ('report.json','report.csv','report.html','history.sqlite'):self.assertTrue((Path(d)/f).exists())
             with sqlite3.connect(Path(d)/'history.sqlite') as db:self.assertEqual(db.execute('select count(*) from prices').fetchone()[0],1)
     def test_private_url_rejected(self):
