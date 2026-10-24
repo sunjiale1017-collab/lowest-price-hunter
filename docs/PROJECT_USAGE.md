@@ -19,3 +19,15 @@
 - Project Instructions **不会**自动调用 GitHub Actions；需要 GitHub 工具连接或用户手动点击。
 - Python 目前可批量抓公开页面，但未实现所有商家的购物车优惠验证；这是待开发功能，不能声称有 A 级券。
 - 单个工作流的最大运行 8 分钟限制的是时长，不保证账号零收费。GitHub 账户的真实免费额度必须另行核实。
+
+## 手机中的实际操作
+
+以后日常购买问题，直接在 ChatGPT Project 里搜索即可。Project 可以帮助查公共网页，但无法保证调用仓库中的 Python。
+
+如果用户同意用 GitHub 执行更深的商品采集：
+1. 先确定商品的精确型号/SKU。
+2. 进入 https://github.com/sunjiale1017-collab/lowest-price-hunter/actions/workflows/manual.yml ，选择 Run workflow。
+3. 打开 `run_approved`（仅本次）、打开 `live`（实际网页搜索），填写 `product_model`（如 TR738AT2B）。
+4. 执行后检查 Actions 的真实状态并下载比较报告；未验证库存、运费、优惠则不能叫最低最终到手价。
+
+当前型号搜索范围仅为配置在 `config/europe.json` 的三个商家搜索入口；数据覆盖范围和 HTML 兼容性有限。用户不授权 Actions 时继续在 ChatGPT 的网页搜索中比较，不能自动运行云端 Python。
