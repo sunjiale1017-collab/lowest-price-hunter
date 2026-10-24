@@ -7,12 +7,13 @@ from hunter.evidence import apply,attach_promotions
 from price_engine import rank
 from hunter.report import write
 from hunter.models import now
+from hunter.search_input import with_model
 from coupons.search import collect
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--config',default='config/aeg.json');p.add_argument('--out',default='reports/live');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--config',default='config/aeg.json');p.add_argument('--out',default='reports/live');p.add_argument('--model',help='Exact product model/SKU, only with configured merchant search pages');a=p.parse_args()
     logging.basicConfig(level=logging.INFO,format='%(levelname)s %(message)s')
-    cfg=json.load(open(a.config));client=Client();offers=[];failures=[];leads=[]
+    cfg=with_model(json.load(open(a.config,encoding='utf-8')),a.model);client=Client();offers=[];failures=[];leads=[]
     for s in cfg['sources']:
         logging.info('Collecting %s',s['url'])
         try:
@@ -31,6 +32,6 @@ def main():
     failures+=apply(offers,cfg.get('evidence',[]))
     failures+=attach_promotions(offers,cfg.get('coupons',[]),'coupons')
     failures+=attach_promotions(offers,cfg.get('cashback',[]),'cashback')
-    data=write(rank(offers),failures,leads,a.out)
+    data=write(rank(offers),failures,leads,a.out,requested_model=cfg['model'])
     print(json.dumps({'offers':len(offers),'verified':len(data['verified_ranking']),'failures':len(failures),'output':a.out}))
 if __name__=='__main__':main()
