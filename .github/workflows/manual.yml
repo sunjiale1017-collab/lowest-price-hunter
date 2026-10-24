@@ -3,14 +3,19 @@ on:
   workflow_dispatch:
     inputs:
       run_approved:
-        description: 'I authorize this one run; it uses GitHub Actions included minutes'
+        description: 'I authorize this single run (uses GitHub Actions minutes)'
         required: true
         type: boolean
         default: false
       live:
-        description: 'Also attempt public merchant pages (no purchases)'
+        description: 'Search public merchant pages (without purchasing)'
         type: boolean
         default: false
+      product_model:
+        description: 'Optional exact model/SKU for NL-DE-BE search; blank tests default AEG target'
+        required: false
+        type: string
+        default: ''
 permissions:
   contents: read
 jobs:
@@ -23,9 +28,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m unittest discover -s tests -v
-      - if: ${{ inputs.live }}
-        run: python -m hunter.cli --out reports/live
+      - name: Run offline tests
+        run: python -m unittest discover -s tests -v
+      - name: Collect product price evidence (public sites only)
+        if: ${{ inputs.live }}
+        env:
+          PRODUCT_MODEL: ${{ inputs.product_model }}
+        run: |
+          if [ -n "$PRODUCT_MODEL" ]; then
+            python -m hunter.cli --config config/europe.json --model "$PRODUCT_MODEL" --out reports/live
+          else
+            python -m hunter.cli --config config/aeg.json --out reports/live
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: comparison-reports
