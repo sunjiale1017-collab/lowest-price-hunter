@@ -3,10 +3,10 @@ from pathlib import Path
 from hunter.models import now
 from cashback import potential_net
 
-def write(offers,failures,leads,directory):
+def write(offers,failures,leads,directory,requested_model=None):
     path=Path(directory);path.mkdir(parents=True,exist_ok=True)
     serialize=lambda o: {**o.dict(),'potential_net_if_cashback_approved':potential_net(o.total,o.cashback)}
-    data={'generated_at':now(),'verified_ranking':[serialize(o) for o in offers if o.total is not None][:10],'unverified_offers':[serialize(o) for o in offers if o.total is None],'failures':failures,'leads':leads,'monitoring_deployed':False}
+    data={'generated_at':now(),'requested_model':requested_model,'verified_ranking':[serialize(o) for o in offers if o.total is not None][:10],'unverified_offers':[serialize(o) for o in offers if o.total is None],'failures':failures,'leads':leads,'monitoring_deployed':False}
     (path/'report.json').write_text(json.dumps(data,ensure_ascii=False,indent=2))
     with (path/'report.csv').open('w',newline='') as f:
         fields=['model','ean','sku','merchant','country','condition','stock','price','currency','shipping','total','url','checked_at','exclusions'];w=csv.DictWriter(f,fieldnames=fields,extrasaction='ignore');w.writeheader();w.writerows(o.dict() for o in offers)
