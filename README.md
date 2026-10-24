@@ -24,11 +24,11 @@ Windows 可把 `python` 换为 `py -3`。无需 pip 安装。查看 `reports/liv
 - 运费、荷兰配送、VAT、手续费、退货、保修、安装、回收字段和带来源的证据导入；未知费用保留空值，禁止进入确定排名。
 - 精确报价去重、Decimal 计算、前10确定报价及未核实报价分组、SQLite 价格/失败运行历史。
 - robots fail-closed、明确 UA、每域至少2秒、超时、最多2次重试、响应体大小限制、CAPTCHA/403/429/重定向停止、日志。
-- 25项离线自动化测试与手动 GitHub Actions 工作流；没有 schedule。
+- 28项离线自动化测试与手动 GitHub Actions 工作流；没有 schedule。
 
 ## 配置与证据
 
-`config/aeg.json` 是真实验收目标。`config/europe.json` 是 NL/DE/BE 搜索入口，访问成功不等于能取得报价。新商家提供 `merchant`, `country`, `url`；可选 `search_url` 内以 `{query}` 占位。Feed 需 `adapter: feed`, `format: json` 或 `csv`，字段见 `scrapers/feed.py`。
+**新：按型号运行（仅适用已经配置搜索入口的商家）：** `python -m hunter.cli --config config/europe.json --model TR738AT2B --out reports/custom`。`--model` 接受 2–60 位英文数字及 `.-_` 的准确 SKU，未指定则保留原配置。不能用中文商品描述替代精确型号，也不会凭空新增商家。搜索失败会真实报告，不能保证找到报价。\n\n`config/aeg.json` 是真实验收目标。`config/europe.json` 是 NL/DE/BE 搜索入口，访问成功不等于能取得报价。新商家提供 `merchant`, `country`, `url`；可选 `search_url` 内以 `{query}` 占位。Feed 需 `adapter: feed`, `format: json` 或 `csv`，字段见 `scrapers/feed.py`。
 
 配送/VAT 等不能由国家后缀推断。浏览器或人工实际读到条件后，在配置的 `evidence` 列表添加对象：`offer_url`, `model`, `source_url`, `quote`, `checked_at`, `destination_country: NL`, `facts`。`facts` 可包含 `shipping`, `fees`, `delivery_nl`, `vat_included`, `warranty`, `returns`, `installation`, `old_appliance`。证据在4小时内且精确匹配报价才应用。不自动填0；必须确认没有其他必要费用后才记录 `fees: 0`。真实用户地址不应放进代码仓库。
 
@@ -46,11 +46,11 @@ Windows 可把 `python` 换为 `py -3`。无需 pip 安装。查看 `reports/liv
 - 尚无小红书/YouTube/TikTok 平台专用适配器；本次公开搜索未取得可核实优惠内容。Reddit 仅为讨论线索，不证明价格/库存。
 - 没有接通搜索引擎 API 或付费历史服务；历史从自己的实际观测开始，不伪造既往最低价。
 
-## GitHub 已部署与费用保护
+## 手机端与 ChatGPT Project 使用\n\n- 日常只需在 Lowest Price Hunter Project 问商品名称；聊天中的网页搜索可即时协助，不需要触发 GitHub Actions。\n- 若要使用 Python 云端采集，先让 ChatGPT 解释并请求用户确认；GitHub Actions 不能凭一段 Project Instructions 自动执行。仓库工作流地址：https://github.com/sunjiale1017-collab/lowest-price-hunter/actions/workflows/manual.yml\n- 手动展开 Run workflow 后：勾选 **run_approved** 表示仅授权这一次；勾选 **live** 表示访问公开商家网页；在 **product_model** 输入精确型号（例如 TR738AT2B）。留空时仍使用固定 AEG 测试来源。\n- 对任意型号的脚本搜索目前仅配置 Coolblue NL、MediaMarkt DE 和 Coolblue BE 三个搜索入口，**不等于完整欧洲比价**。其他网站需合法配置和测试适配器。\n- 默认不执行、不设置 schedule、不打开付费 API。Report 是运行结果，不等于核实库存、运费和可叠加优惠；无确定最终价必须标注。\n\n## GitHub 已部署与费用保护
 
 源代码已上传至私人仓库 [sunjiale1017-collab/lowest-price-hunter](https://github.com/sunjiale1017-collab/lowest-price-hunter)，包含手动触发的 GitHub Actions `.github/workflows/manual.yml`。**代码上传成功不等于云端运行通过**；截至本次文档修订，尚无 GitHub Actions 成功运行的证据。
 
-运行工作流在 GitHub 仓库的 **Actions → Manual comparison → Run workflow**。开关 `run_approved` 默认 false，只有用户明确同意本次运行才设为 true；若为 false，check job 不会执行。用户表示账户未绑定有效付款方式，GitHub 官方文档说明免费额度用完后会阻止继续使用；如以后添加付款方式，必须重新核实账单和超额费用限制。开启 `live` 表示允许尝试公开商家网页，不下单；默认 false 只运行 25 项离线测试。工作流最长 8 分钟；这是超时上限，**不是金钱费用上限**。
+运行工作流在 GitHub 仓库的 **Actions → Manual comparison → Run workflow**。开关 `run_approved` 默认 false，只有用户明确同意本次运行才设为 true；若为 false，check job 不会执行。用户表示账户未绑定有效付款方式，GitHub 官方文档说明免费额度用完后会阻止继续使用；如以后添加付款方式，必须重新核实账单和超额费用限制。开启 `live` 表示允许尝试公开商家网页，不下单；默认 false 只运行 25 项离线测试。工作流最长 8 分钟；这是超时上限，**不是金钱费用上限**。用户同意一次运行不代表确认了 GitHub 账户的账单设置。
 
 GitHub Actions 私人仓库消耗免费额度；如账户有有效付款方式，超过配额可能收费。请勿将用户口头提供的付款信息状态当成已独立验证的账户配置；有付款方式时应在 Billing 设置费用限制。仓库保持 Private，无自动 schedule、无付费 API、无登录 Cookie。项目不会自动弹出 GitHub Actions 授权；ChatGPT Project 的询问规则需要在其 Project Instructions 中另行配置，见 [docs/PROJECT_USAGE.md](docs/PROJECT_USAGE.md)。
 
